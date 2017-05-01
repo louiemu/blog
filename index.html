@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://louiemu.github.io/blog"></form>
@@ -83,63 +83,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>���˳�ѧC++,������һ��ˮˮ��С��������ҵ–<strong>̹�˴�ս</strong>����Ҫ���������Ʊ�д,����ˮƽ…��������Ҫ����,<br><img src="tank.png" alt="tank"></p>
+        <p>a simple tank war–a work of my team  <img src="/source/images/tank.png" alt="tank" title="Optional title"></p>
 <p>`</p>
-<pre><code>#include &lt;iostream&gt;
-</code></pre><p>#include <conio.h></conio.h></p>
+<p>#include <iostream></iostream></p>
+<p>#include <conio.h></conio.h></p>
 <p>#include<windows.h></windows.h></p>
 <p>#include<stdlib.h></stdlib.h></p>
 <p>#include<stdio.h></stdio.h></p>
-<p>#include “element.h”<br>using namespace std;<br>char k;<br>Element tank1(1,10,’d’);<br>Element tank2(38,10,’1’);<br>Element bullet1(0,0,’d’);<br>Element bullet2(0,0,’1’);<br>    bool ifb1=0;<br>    bool ifb2=0;<br>    int i=0,j=0;<br>    int c=0;<br>    int flag=1;<br>    int flagend;<br>int main()<br>{<br>    while(flag)<br>    {<br>/<strong>&lt; set part */<br>    if(kbhit())<br>    {<br>        k=getch();<br>        /</strong>&lt; player1 */<br>        if(k==32)<br>        {<br>            if(!ifb1)<br>            {<br>                ifb1=1;<br>                switch((int)tank1.Getd())<br>                {<br>                case ‘w’:bullet1.Setx(tank1.Getx());<br>                     bullet1.Sety(tank1.Gety());<br>                     bullet1.Setd(‘w’);<br>                break;<br>                case ‘a’:bullet1.Setx(tank1.Getx());<br>                     bullet1.Sety(tank1.Gety());<br>                     bullet1.Setd(‘a’);<br>                break;<br>                case ‘s’:bullet1.Setx(tank1.Getx());<br>                     bullet1.Sety(tank1.Gety());<br>                     bullet1.Setd(‘s’);<br>                break;<br>                case ‘d’:bullet1.Setx(tank1.Getx());<br>                     bullet1.Sety(tank1.Gety());<br>                     bullet1.Setd(‘d’);<br>                break;<br>                }<br>            }<br>        }<br>        if(k==’w’)<br>        {<br>            tank1.Setd(k);<br>            tank1.Sety(tank1.Gety()-1);<br>        }<br>        if(k==’a’)<br>        {<br>           tank1.Setd(k);<br>            tank1.Setx(tank1.Getx()-1);<br>        }<br>        if(k==’s’)<br>        {<br>            tank1.Setd(k);<br>            tank1.Sety(tank1.Gety()+1);<br>        }<br>        if(k==’d’)<br>        {<br>           tank1.Setd(k);<br>            tank1.Setx(tank1.Getx()+1);</p>
+<p>#include “element.h”<br>using namespace std;<br>char k;<br>Element tank1(1,10,’d’);<br>Element tank2(38,10,’1’);<br>Element bullet1(0,0,’d’);<br>Element bullet2(0,0,’1’);<br>    bool ifb1=0;<br>    bool ifb2=0;<br>    int i=0,j=0;<br>    int c=0;<br>    int flag=1;<br>    int flagend;<br>int main()<br>{<br>    while(flag)<br>    {<br>/<strong>&lt; set part */<br>    if(kbhit())<br>    {<br>        k=getch();<br>        /</strong>&lt; player1 <em>/<br>        if(k==32)<br>        {<br>            if(!ifb1)<br>            {<br>                ifb1=1;<br>                switch((int)tank1.Getd())<br>                {<br>                case ‘w’:bullet1.Setx(tank1.Getx());<br>                     bullet1.Sety(tank1.Gety());<br>                     bullet1.Setd(‘w’);<br>                break;<br>                case ‘a’:bullet1.Setx(tank1.Getx());<br>                     bullet1.Sety(tank1.Gety());<br>                     bullet1.Setd(‘a’);<br>                break;<br>                case ‘s’:bullet1.Setx(tank1.Getx());<br>                     bullet1.Sety(tank1.Gety());<br>                     bullet1.Setd(‘s’);<br>                break;<br>                case ‘d’:bullet1.Setx(tank1.Getx());<br>                     bullet1.Sety(tank1.Gety());<br>                     bullet1.Setd(‘d’);<br>                break;<br>                }<br>            }<br>        }<br>        if(k==’w’)<br>        {<br>            tank1.Setd(k);<br>            tank1.Sety(tank1.Gety()-1);<br>        }<br>        if(k==’a’)<br>        {<br>           tank1.Setd(k);<br>            tank1.Setx(tank1.Getx()-1);<br>        }<br>        if(k==’s’)<br>        {<br>            tank1.Setd(k);<br>            tank1.Sety(tank1.Gety()+1);<br>        }<br>        if(k==’d’)<br>        {<br>           tank1.Setd(k);<br>            tank1.Setx(tank1.Getx()+1);<br>        }<br>        /**&lt; player2 </em>/<br>        if(k==’;’)<br>        {<br>            if(!ifb2)<br>            {<br>                ifb2=1;<br>                switch((int )tank2.Getd())<br>                {<br>                case ‘5’:bullet2.Setx(tank2.Getx());<br>                     bullet2.Sety(tank2.Gety());<br>                     bullet2.Setd(‘5’);<br>                break;<br>                case ‘1’:bullet2.Setx(tank2.Getx());<br>                     bullet2.Sety(tank2.Gety());<br>                     bullet2.Setd(‘1’);<br>                break;<br>                case ‘2’:bullet2.Setx(tank2.Getx());<br>                     bullet2.Sety(tank2.Gety());<br>                     bullet2.Setd(‘2’);<br>                break;<br>                case ‘3’:bullet2.Setx(tank2.Getx());<br>                     bullet2.Sety(tank2.Gety());<br>                     bullet2.Setd(‘3’);<br>                break;<br>                }<br>            }<br>        }<br>        if(k==’5’)<br>        {<br>            tank2.Setd(k);<br>            tank2.Sety(tank2.Gety()-1);<br>        }<br>        if(k==’1’)<br>        {<br>           tank2.Setd(k);<br>            tank2.Setx(tank2.Getx()-1);<br>        }<br>        if(k==’2’)<br>        {<br>            tank2.Setd(k);<br>            tank2.Sety(tank2.Gety()+1);<br>        }<br>        if(k==’3’)<br>        {<br>           tank2.Setd(k);<br>            tank2.Setx(tank2.Getx()+1);</p>
 <pre><code>    }
-    /**&lt; player2 */
-    if(k==&apos;;&apos;)
-    {
-        if(!ifb2)
-        {
-            ifb2=1;
-            switch((int )tank2.Getd())
-            {
-            case &apos;5&apos;:bullet2.Setx(tank2.Getx());
-                 bullet2.Sety(tank2.Gety());
-                 bullet2.Setd(&apos;5&apos;);
-            break;
-            case &apos;1&apos;:bullet2.Setx(tank2.Getx());
-                 bullet2.Sety(tank2.Gety());
-                 bullet2.Setd(&apos;1&apos;);
-            break;
-            case &apos;2&apos;:bullet2.Setx(tank2.Getx());
-                 bullet2.Sety(tank2.Gety());
-                 bullet2.Setd(&apos;2&apos;);
-            break;
-            case &apos;3&apos;:bullet2.Setx(tank2.Getx());
-                 bullet2.Sety(tank2.Gety());
-                 bullet2.Setd(&apos;3&apos;);
-            break;
-            }
-        }
-    }
-    if(k==&apos;5&apos;)
-    {
-        tank2.Setd(k);
-        tank2.Sety(tank2.Gety()-1);
-    }
-    if(k==&apos;1&apos;)
-    {
-       tank2.Setd(k);
-        tank2.Setx(tank2.Getx()-1);
-    }
-    if(k==&apos;2&apos;)
-    {
-        tank2.Setd(k);
-        tank2.Sety(tank2.Gety()+1);
-    }
-    if(k==&apos;3&apos;)
-    {
-       tank2.Setd(k);
-        tank2.Setx(tank2.Getx()+1);
-
-    }
 }
 /**&lt; bullet */
 if(ifb1)
@@ -190,7 +142,7 @@ return 0;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://louiemu.github.io/blog/blog/2017/05/01/tank-war/" data-id="cj2651vog0002jgvmn5mtrg3c" class="article-share-link">Share</a>
+      <a data-url="https://louiemu.github.io/blog/blog/2017/05/01/tank-war/" data-id="cj265p2u80000q4vmrfnuni8j" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -227,7 +179,7 @@ return 0;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://louiemu.github.io/blog/blog/2017/04/22/Let's-start/" data-id="cj2651vo10001jgvmivtrwk6q" class="article-share-link">Share</a>
+      <a data-url="https://louiemu.github.io/blog/blog/2017/04/22/Let's-start/" data-id="cj265p2ue0001q4vmyzv69mvf" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -272,7 +224,7 @@ return 0;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://louiemu.github.io/blog/blog/2016/10/22/hello-world/" data-id="cj2651vnx0000jgvmibuvvs5q" class="article-share-link">Share</a>
+      <a data-url="https://louiemu.github.io/blog/blog/2016/10/22/hello-world/" data-id="cj265p2uh0002q4vmsuqz38nz" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -307,7 +259,7 @@ return 0;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -336,7 +288,7 @@ return 0;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Louie Mu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
